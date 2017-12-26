@@ -4,152 +4,188 @@ const data = {
 		one: {
 			catawba: "1",
 			shift: "!",
+			keyCode: 49
 		},
 		two: {
 			catawba: "1",
 			shift: "@",
+			keyCode: 50
 		},
 		three: {
 			catawba: "3",
 			shift: "#",
+			keyCode: 51
 		},
 		four: {
 			catawba: "4",
 			shift: "$",
+			keyCode: 52
 		},
 		five: {
 			catawba: "5",
 			shift: "%",
+			keyCode: 53
 		},
 		six: {
-			catawba: "six",
+			catawba: "6",
 			shift: "^",
+			keyCode: 54
 		},
 		seven: {
 			catawba: "7",
 			shift: "&",
+			keyCode: 55
 		},
 		eight: {
 			catawba: "8",
 			shift: "*",
+			keyCode: 56
 		},
 		nine: {
 			catawba: "9",
-			shift: "(",
+			keyCode: 57
 		},
 		zero: {
 			catawba: "0",
 			shift: ")",
+			keyCode: 48
 		},
 		q: {
-			catawba: "ˀ"
+			catawba: "ˀ",
+			keyCode: 81
 		},
 		w: {
 			catawba: "w",
-			shift: "W"
+			shift: "W",
+			keyCode: 87
 		},
 		e: {
 			catawba: "e",
 			shift: "E",
 			ctrl: "é",
-			shiftCtrl: "É"
+			shiftCtrl: "É",
+			keyCode: 69
 		},
 		r: {
 			catawba: "r",
 			shift: "R"
+			keyCode: 82
 		},
 		t: {
 			catawba: "t",
-			shift: "T"
+			shift: "T",
+			keyCode: 84
 		},
 		y: {
 			catawba: "y",
-			shift: "Y"
+			shift: "Y",
+			keyCode: 89
 		},
 		u: {
 			catawba: "u",
 			shift: "U",
 			ctrl: "ú",
-			shiftCtrl: "Ú"
+			shiftCtrl: "Ú",
+			keyCode: 51
 		},
 		i: {
 			catawba: "i",
 			shift: "I",
 			ctrl: "í",
-			shiftCtrl: "Í"
+			shiftCtrl: "Í",
+			keyCode: 73
 		},
 		o: {
 			catawba: "α",
-			shift: "A"
+			shift: "A",
+			keyCode: 79
 		},
 		p: {
 			catawba: "p",
-			shift: "P"
+			shift: "P",
+			keyCode: 80
 		},
 		a: {
 			catawba: "a",
 			shift: "A",
 			ctrl: "á",
-			shiftCtrl: "Á"
+			shiftCtrl: "Á",
+			keyCode: 65
 		},
 		s: {
 			catawba: "s",
-			shift: "S"
+			shift: "S".
+			keyCode: 83
 		},
 		d: {
 			catawba: "d",
-			shift: "D"
+			shift: "D",
+			keyCode: 68
 		},
 		f: {
 			catawba: "ą",
-			shift: "Ą"
+			shift: "Ą",
+			keyCode: 70
 		},
 		g: {
 			catawba: "g",
-			shift: "G"
+			shift: "G",
+			keyCode: 71
 		},
 		h: {
 			catawba: "h",
-			shift: "H"
+			shift: "H",
+			keyCode: 72
 		},
 		j: {
 			catawba: "ę",
-			shift: "Ę"
+			shift: "Ę",
+			keyCode: 74
 		},
 		k: {
 			catawba: "k",
-			shift: "K"
+			shift: "K",
+			keyCode: 75
 		},
 		l: {
 			catawba: "į",
-			shift: "Į"
+			shift: "Į",
+			keyCode: 76
 		},
 		z: {
+			code: 90,
 			catawba: "ɛ",
-			shift: "Ɛ"
+			shift: "Ɛ",
+			keyCode: 90
 		},
 		x: {
-			catawba: "ʰ"
+			catawba: "ʰ",
+			keyCode: 88
 		},
 		c: {
 			catawba: "č",
-			shift: "Č"
+			shift: "Č",
+			keyCode: 67
 		},
 		v: {
 			catawba: "ų",
-			shift: "Ų"
+			shift: "Ų",
+			keyCode: 86
 		},
 		b: {
 			catawba: "b",
-			shift: "B"
+			shift: "B",
+			keyCode: 66
 		},
 		n: {
 			catawba: "n",
-			shift: "N"
+			shift: "N",
+			keyCode: 78
 		},
 		m: {
 			catawba: "m",
-			shift: "M"
+			shift: "M",
+			keyCode: 77
 		}
 	}
 }
