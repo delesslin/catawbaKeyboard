@@ -68,7 +68,7 @@ const data = {
 		},
 		r: {
 			catawba: "r",
-			shift: "R"
+			shift: "R",
 			keyCode: 82
 		},
 		t: {
@@ -114,7 +114,7 @@ const data = {
 		},
 		s: {
 			catawba: "s",
-			shift: "S".
+			shift: "S",
 			keyCode: 83
 		},
 		d: {
