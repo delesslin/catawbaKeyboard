@@ -1,0 +1,20 @@
+*{
+	background-color: red;
+}
+
+.boardKey {
+	font-size: 2em;
+	display: inline-flex;
+	Font-family: 'Ubuntu';
+	height: 70px;
+	width: 60px;
+	margin: 5px;
+	border: 2px solid black;
+	border-radius: 5px 5px;
+	justify-content: center;
+	align-items: center;
+}
+
+.boardKey span {
+
+}

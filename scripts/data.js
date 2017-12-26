@@ -7,7 +7,7 @@ const data = {
 			keyCode: 49
 		},
 		two: {
-			catawba: "1",
+			catawba: "2",
 			shift: "@",
 			keyCode: 50
 		},
