@@ -1,20 +1,32 @@
 *{
-	background-color: red;
+
 }
 
 .boardKey {
-	font-size: 2em;
 	display: inline-flex;
-	Font-family: 'Ubuntu';
+	justify-content: center;
+	align-items: center;
+
 	height: 70px;
 	width: 60px;
 	margin: 5px;
 	border: 2px solid black;
 	border-radius: 5px 5px;
-	justify-content: center;
-	align-items: center;
+
 }
 
 .boardKey span {
+		font-family: 'Ubuntu';
+		font-size: 2em;
+}
 
+.boardKey:hover {
+	box-shadow: 3px 3px 1px black;
+	text-shadow: 1px 1px 10px #ddd;
+	cursor: pointer;
+}
+
+.boardKey:active{
+	box-shadow: none;
+	text-shadow: none;
 }

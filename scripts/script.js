@@ -3,7 +3,6 @@ const root = document.getElementById("root");
 class Key extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log(props);
 		this.state = {
 			keyCode: props.keyData.keyCode,
 			catawba: props.keyData.catawba
@@ -12,6 +11,7 @@ class Key extends React.Component {
 	}
 	click() {
 		console.log(this.state.keyCode);
+		this.props.onClick(this.props.keyData.catawba)
 	}
 	render(){
 		return (
@@ -27,32 +27,93 @@ class Key extends React.Component {
 	}
 }
 
-const objIterator = (obj) =>{
-	let arr = [];
-	for(let prop in obj){
-		if(obj.hasOwnProperty(prop)){
-			arr.push(obj[prop]);
-		}
-	}
-	return arr
-}
+// const getData = (data) =>{
+// 	let arr = [];
+// 	for(let prop in obj){
+// 		if(obj.hasOwnProperty(prop)){
+// 			arr.push(obj[prop]);
+// 		}
+// 	}
+// 	return arr
+// }
 
 class App extends React.Component{
-	handleKeyClick = () => {
-		console.log("One of my keys has been pressed!");
+	constructor(){
+		super();
+		this.state = ({
+			text: ""
+		})
 	}
 
+	componentDidMount(){
+		this.nameInput.focus();
+	}
+
+	handleKeyPress(event){
+		console.log(event);
+		this.setState({
+			text: this.state.text + event
+		})
+	}
+
+	handleKeyClick = (event) => {
+		// console.log(data.keys);
+		// let allData = [];
+		// for(let arr of data.keys){
+		// 	for(let el of arr){
+		// 		allData.push(el)
+		// 	}
+		// }
+		// console.log(allData);
+		// this.setState({
+		// 	text: this.state.text + allData.find( el => {
+		// 		return el.key === event.key
+		// 	})
+		// })
+	}
+
+
 	render(){
-		let keys = objIterator(data.keys);
+		let keys = data.keys;
+		console.log(keys);
+		// console.log(this.state);
 		return (
-		<div>
+		<div >
+			<input
+				value={this.state.text}
+				onKeyPress={this.handleKeyClick}
+				ref={(input) => { this.nameInput = input; }}
+			 />
+			<div class="row-1">
 			{
-			keys.map(obj => {
-				return (
-					<Key keyData={obj} />
-				)
-			})
-		}
+				keys[0].map(arr  => {
+
+					return (
+						<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+					)
+				})
+			}
+			</div>
+			<div id="row-2">
+			{
+				keys[1].map(arr  => {
+
+					return (
+						<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+					)
+				})
+			}
+			</div>
+			<div class="row-3">
+			{
+				keys[2].map(arr  => {
+
+					return (
+						<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+					)
+				})
+			}
+			</div>
 		</div>
 	)
 	}
