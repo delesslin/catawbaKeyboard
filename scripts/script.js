@@ -1,3 +1,13 @@
+// TODO: Implement flux
+// TODO: Implement backspace
+// TODO: Connect button click to related button
+// TODO: Rename key to button...
+// TODO: Implement shift, control, and shiftCtrl
+
+
+
+
+
 const root = document.getElementById("root");
 
 class Key extends React.Component {
@@ -10,7 +20,7 @@ class Key extends React.Component {
 
 	}
 	click() {
-		console.log(this.state.keyCode);
+		// console.log(this.state.keyCode);
 		this.props.onClick(this.props.keyData.catawba)
 	}
 	render(){
@@ -50,32 +60,33 @@ class App extends React.Component{
 	}
 
 	handleKeyPress(event){
-		console.log(event);
+		// console.log(event);
 		this.setState({
 			text: this.state.text + event
 		})
 	}
 
 	handleKeyClick = (event) => {
-		// console.log(data.keys);
-		// let allData = [];
-		// for(let arr of data.keys){
-		// 	for(let el of arr){
-		// 		allData.push(el)
-		// 	}
-		// }
-		// console.log(allData);
-		// this.setState({
-		// 	text: this.state.text + allData.find( el => {
-		// 		return el.key === event.key
-		// 	})
-		// })
+		let allData = [];
+		for(let arr of data.keys){
+			for(let el of arr){
+				allData.push(el)
+			}
+		}
+		let match = allData.find(
+			el => {
+				return el.key === event.key
+			}).catawba;
+		console.log(match);
+		this.setState({
+			text: this.state.text + match
+		})
 	}
 
 
 	render(){
 		let keys = data.keys;
-		console.log(keys);
+		// console.log(keys);
 		// console.log(this.state);
 		return (
 		<div >
