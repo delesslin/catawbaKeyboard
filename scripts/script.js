@@ -15,8 +15,8 @@ class Key extends React.Component {
 			keyCode: props.keyData.keyCode,
 			catawba: props.keyData.catawba
 		};
-
 	}
+	
 	click() {
 		// console.log(this.state.keyCode);
 		this.props.onClick(this.props.keyData.catawba)
