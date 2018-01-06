@@ -67,6 +67,7 @@ class App extends React.Component{
 	}
 
 	handleKeyClick = (event) => {
+		console.log(event.key);
 		let allData = [];
 		for(let arr of data.keys){
 			for(let el of arr){
@@ -86,8 +87,6 @@ class App extends React.Component{
 
 	render(){
 		let keys = data.keys;
-		// console.log(keys);
-		// console.log(this.state);
 		return (
 		<div >
 			<input
@@ -95,7 +94,8 @@ class App extends React.Component{
 				onKeyPress={this.handleKeyClick}
 				ref={(input) => { this.nameInput = input; }}
 			 />
-			<div class="row-1">
+
+			<div className="row">
 			{
 				keys[0].map(arr  => {
 
@@ -105,7 +105,7 @@ class App extends React.Component{
 				})
 			}
 			</div>
-			<div id="row-2">
+			<div className="row">
 			{
 				keys[1].map(arr  => {
 
@@ -115,7 +115,7 @@ class App extends React.Component{
 				})
 			}
 			</div>
-			<div class="row-3">
+			<div className="row">
 			{
 				keys[2].map(arr  => {
 
@@ -124,6 +124,16 @@ class App extends React.Component{
 					)
 				})
 			}
+			</div>
+			<div className="row">
+				{
+					keys[3].map(arr  => {
+
+						return (
+							<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+						)
+					})
+				}
 			</div>
 		</div>
 	)

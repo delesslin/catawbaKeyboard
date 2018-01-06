@@ -8,8 +8,9 @@
 	align-items: center;
 
 	height: 70px;
-	width: 60px;
+	min-width: 60px;
 	margin: 5px;
+	padding: 0px 5px;
 	border: 2px solid black;
 	border-radius: 5px 5px;
 
@@ -29,4 +30,9 @@
 .boardKey:active{
 	box-shadow: none;
 	text-shadow: none;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
 }

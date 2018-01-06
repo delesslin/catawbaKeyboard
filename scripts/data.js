@@ -60,6 +60,12 @@ const data = {
 				shift: ")",
 				keyCode: 48,
 				key: "0"
+			},
+			{
+				catawba: "BACKSPACE",
+				shift: "BACKSPACE",
+				keyCode: 77,
+				key: "BACKSPACE"
 			}
 		],
 		[
@@ -131,6 +137,12 @@ const data = {
 		],
 		[
 			{
+				catawba: "SHIFT",
+				shift: "SHIFT",
+				keyCode: 77,
+				key: "SHIFT"
+			},
+			{
 				catawba: "a",
 				shift: "A",
 				ctrl: "á",
@@ -185,6 +197,12 @@ const data = {
 				shift: "Į",
 				keyCode: 76,
 				key: "l"
+			},
+			{
+				catawba: "SHIFT",
+				shift: "SHIFT",
+				keyCode: 77,
+				key: "SHIFT"
 			}
 		],
 		[
@@ -229,6 +247,23 @@ const data = {
 				shift: "M",
 				keyCode: 77,
 				key: "m"
+			}
+		],
+		[
+			{
+				catawba: "CTRL",
+				keyCode: 77,
+				key: "ctrl"
+			},
+			{
+				catawba: "SPACE",
+				keyCode: 77,
+				key: " "
+			},
+			{
+				catawba: "CTRL",
+				keyCode: 77,
+				key: "ctrl"
 			}
 		]
 	]
