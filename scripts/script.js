@@ -1,14 +1,12 @@
-// TODO: Implement flux
 // TODO: Implement backspace
 // TODO: Connect button click to related button
 // TODO: Rename key to button...
 // TODO: Implement shift, control, and shiftCtrl
 
-
-
-
-
 const root = document.getElementById("root");
+const dispatcher = new Flux.Dispatcher;
+const keyboardStore = new KeyboardStore();
+dispatcher.register(keyboardStore.handleActions.bind(keyboardStore));
 
 class Key extends React.Component {
 	constructor(props) {
@@ -37,21 +35,19 @@ class Key extends React.Component {
 	}
 }
 
-// const getData = (data) =>{
-// 	let arr = [];
-// 	for(let prop in obj){
-// 		if(obj.hasOwnProperty(prop)){
-// 			arr.push(obj[prop]);
-// 		}
-// 	}
-// 	return arr
-// }
-
 class App extends React.Component{
 	constructor(){
 		super();
 		this.state = ({
-			text: ""
+			text: keyboardStore.text
+		})
+	}
+
+	componentWillMount(){
+		keyboardStore.on("change", () => {
+			this.setState({
+				text: keyboardStore.text
+			})
 		})
 	}
 
@@ -59,17 +55,13 @@ class App extends React.Component{
 		this.nameInput.focus();
 	}
 
-	handleKeyPress(event){
-		// console.log(event);
-		this.setState({
-			text: this.state.text + event
-		})
+	handleButtonPress(event){
+		addChar(event);
 	}
 
 	handleKeyClick = (event) => {
-		console.log(event.key);
 		let allData = [];
-		for(let arr of data.keys){
+		for(let arr of keyboardStore.keys){
 			for(let el of arr){
 				allData.push(el)
 			}
@@ -78,15 +70,17 @@ class App extends React.Component{
 			el => {
 				return el.key === event.key
 			}).catawba;
-		console.log(match);
-		this.setState({
-			text: this.state.text + match
+
+
+		dispatcher.dispatch({
+			type: "ADD_CHAR",
+			payload: match
 		})
 	}
 
 
 	render(){
-		let keys = data.keys;
+		let keys = keyboardStore.keys;
 		return (
 		<div >
 			<input
@@ -100,7 +94,7 @@ class App extends React.Component{
 				keys[0].map(arr  => {
 
 					return (
-						<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+						<Key onClick={this.handleButtonPress.bind(this)} keyData={arr} />
 					)
 				})
 			}
@@ -110,7 +104,7 @@ class App extends React.Component{
 				keys[1].map(arr  => {
 
 					return (
-						<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+						<Key onClick={this.handleButtonPress.bind(this)} keyData={arr} />
 					)
 				})
 			}
@@ -120,7 +114,7 @@ class App extends React.Component{
 				keys[2].map(arr  => {
 
 					return (
-						<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+						<Key onClick={this.handleButtonPress.bind(this)} keyData={arr} />
 					)
 				})
 			}
@@ -130,7 +124,7 @@ class App extends React.Component{
 					keys[3].map(arr  => {
 
 						return (
-							<Key onClick={this.handleKeyPress.bind(this)} keyData={arr} />
+							<Key onClick={this.handleButtonPress.bind(this)} keyData={arr} />
 						)
 					})
 				}
